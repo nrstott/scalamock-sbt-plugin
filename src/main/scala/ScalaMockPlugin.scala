@@ -41,7 +41,7 @@ object ScalaMockPlugin extends Plugin {
   
   def collectSource(directory: SettingKey[File]) =
     (directory, includeFilter in unmanagedSources, excludeFilter in unmanagedSources) map { 
-      (d, f, e) => d.descendentsExcept(f, e).get
+      (d, f, e) => d.descendantsExcept(f, e).get
     }
   
   lazy val generateMocksSettings = 
